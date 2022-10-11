@@ -3,6 +3,9 @@ import React from 'react'
 import { FaTimes, FaGripLines, FaCheckCircle, FaToggleOff, FaToggleOn } from 'react-icons/fa';
 import { AiOutlineUser, AiOutlineSearch, AiOutlineShopping, AiOutlineHeart} from 'react-icons/ai';
 import Image from 'next/image';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css/skyblue';
+
 
 export default function HomePage() {
   return (
@@ -99,7 +102,7 @@ export default function HomePage() {
 								/>
 							</div>
 						</div>
-						<div className='text-center space-y-4'>
+						<div className='text-center md:text-start space-y-4'>
 							<Image
 								width='90px'
 								height='20px'
@@ -126,7 +129,7 @@ export default function HomePage() {
 								/>
 							</div>
 						</div>
-						<div className='text-center space-y-4'>
+						<div className='text-center md:text-start space-y-4'>
 							<Image
 								width='90px'
 								height='20px'
@@ -153,7 +156,7 @@ export default function HomePage() {
 								/>
 							</div>
 						</div>
-						<div className='text-center space-y-4'>
+						<div className='text-center md:text-start space-y-4'>
 							<Image
 								width='90px'
 								height='20px'
@@ -180,7 +183,7 @@ export default function HomePage() {
 								/>
 							</div>
 						</div>
-						<div className='text-center space-y-4'>
+						<div className='text-center md:text-start space-y-4'>
 							<Image
 								width='90px'
 								height='20px'
@@ -244,7 +247,7 @@ export default function HomePage() {
 				<div className='flex flex-col items-center md:flex-row md:justify-between md:px-20'>
 					<h4 className='text-[24px] font-bold'>Best seller this work</h4>
 					<div className='text-[16px] font-normal'>
-						<span className='flex items-center gap-4'>
+						<span className='flex text-[16px] font-bold items-center gap-4'>
 							<p>Men</p>
 							<span className='text-[34px] text-blue-400'>
 								<FaToggleOn />
@@ -286,6 +289,190 @@ export default function HomePage() {
 							</button>
 						</div>
 					</div>
+				</div>
+			</section>
+			<section className='bg-[#F5F5F5] h-64 w-full px-4 md:px-20 py-4'>
+				<div className='flex flex-col items-center md:flex-row md:justify-between gap-4'>
+					<span>
+						<h4 className='text-[28px] text-center md:text-start font-bold'>New arrivals</h4>
+						<p className='text-[14px] text-center md:text-start w-72 text-[#6C6B6B]'>
+							Enjoy the new products from our store. Select what you like, enjoy
+							& return.
+						</p>
+					</span>
+					<p className="text-[#FF3C78] after:content-['>']">View all</p>
+				</div>
+				<div className='mt-24 px-4'>
+					<Splide
+						options={{
+							gap: '1rem',
+							perPage: 4,
+							arrows: false,
+							pagination: true,
+						}}
+						aria-label='My Favorite Images'>
+                      <SplideSlide>
+                          
+							<div> 
+                            <div className='bg-gradient-to-r w-[260px] h-[350px] rounded-3xl from-[#FFDEBE] to-[#FE7831]'>
+								<p className='text-white text-[24px] font-bold p-4'>1</p>
+								<span>
+									<Image
+										width='800px'
+										height='750px'
+										objectFit='cover'
+										src='/images/shoe6.svg'
+										alt='logo'
+									/>
+								</span>
+								<span className='bg-white px-5 text-[16px] rounded-xl float-right mr-4'>
+									+
+								</span>
+							</div>
+                            	<div className='text-center md:text-start py-10'>
+							<Image
+								width='90px'
+								height='20px'
+								objectFit='contain'
+								src='/images/Rating.svg'
+								alt='logo'
+							/>
+							<p className='text-[16px] w-52'>
+								Adidas Falcon Shoes for men - 2021 Edition
+							</p>
+							<h4 className='font-bold text-[18px] md:text-[22px]'>$120.50</h4>
+						</div>
+                            </div>
+						</SplideSlide>
+						<SplideSlide>
+							<div> 
+                            <div className='bg-gradient-to-r w-[260px] h-[350px] rounded-3xl from-[#8AA8F8] to-[#315BFF]'>
+								<p className='text-white text-[24px] font-bold p-4'>2</p>
+								<span>
+									<Image
+										width='800px'
+										height='750px'
+										objectFit='cover'
+										src='/images/shoe6.svg'
+										alt='logo'
+									/>
+								</span>
+								<span className='bg-white px-5 text-[16px] rounded-xl float-right mr-4'>
+									+
+								</span>
+							</div>
+                            	<div className='text-center md:text-start py-10'>
+							<Image
+								width='90px'
+								height='20px'
+								objectFit='contain'
+								src='/images/Rating.svg'
+								alt='logo'
+							/>
+							<p className='text-[16px] w-52'>
+								Adidas Falcon Shoes for men - 2021 Edition
+							</p>
+							<h4 className='font-bold text-[18px] md:text-[22px]'>$120.50</h4>
+						</div>
+                            </div>
+						</SplideSlide>
+						<SplideSlide>
+							<div> 
+                            <div className='bg-gradient-to-r w-[260px] h-[350px] rounded-3xl from-[#B3F6DC] to-[#02BE83]'>
+								<p className='text-white text-[24px] font-bold p-4'>3</p>
+								<span>
+									<Image
+										width='800px'
+										height='750px'
+										objectFit='cover'
+										src='/images/shoe7.svg'
+										alt='logo'
+									/>
+								</span>
+								<span className='bg-white px-5 text-[16px] rounded-xl float-right mr-4'>
+									+
+								</span>
+							</div>
+                            	<div className='text-center md:text-start py-10'>
+							<Image
+								width='90px'
+								height='20px'
+								objectFit='contain'
+								src='/images/Rating.svg'
+								alt='logo'
+							/>
+							<p className='text-[16px] w-52'>
+								Adidas Falcon Shoes for men - 2021 Edition
+							</p>
+							<h4 className='font-bold text-[18px] md:text-[22px]'>$120.50</h4>
+						</div>
+                            </div>
+						</SplideSlide>
+						<SplideSlide>
+							<div> 
+                            <div className='bg-gradient-to-r w-[260px] h-[350px] rounded-3xl from-[#FFB2B2] to-[#FF3C78]'>
+								<p className='text-white text-[24px] font-bold p-4'>4</p>
+								<span>
+									<Image
+										width='800px'
+										height='750px'
+										objectFit='cover'
+										src='/images/shoe8.svg'
+										alt='logo'
+									/>
+								</span>
+								<span className='bg-white px-5 text-[16px] rounded-xl float-right mr-4'>
+									+
+								</span>
+							</div>
+                            	<div className='text-center md:text-start py-10'>
+							<Image
+								width='90px'
+								height='20px'
+								objectFit='contain'
+								src='/images/Rating.svg'
+								alt='logo'
+							/>
+							<p className='text-[16px] w-52'>
+								Adidas Falcon Shoes for men - 2021 Edition
+							</p>
+							<h4 className='font-bold text-[18px] md:text-[22px]'>$120.50</h4>
+						</div>
+                            </div>
+						</SplideSlide>
+						<SplideSlide>
+							<div> 
+                            <div className='bg-gradient-to-r w-[260px] h-[350px] rounded-3xl from-[#8AA8F8] to-[#315BFF]'>
+								<p className='text-white text-[24px] font-bold p-4'>5</p>
+								<span>
+									<Image
+										width='800px'
+										height='750px'
+										objectFit='cover'
+										src='/images/shoe6.svg'
+										alt='logo'
+									/>
+								</span>
+								<span className='bg-white px-5 text-[16px] rounded-xl float-right mr-4'>
+									+
+								</span>
+							</div>
+                            	<div className='text-center md:text-start py-10'>
+							<Image
+								width='90px'
+								height='20px'
+								objectFit='contain'
+								src='/images/Rating.svg'
+								alt='logo'
+							/>
+							<p className='text-[16px] w-52'>
+								Adidas Falcon Shoes for men - 2021 Edition
+							</p>
+							<h4 className='font-bold text-[18px] md:text-[22px]'>$120.50</h4>
+						</div>
+                            </div>
+						</SplideSlide>
+					</Splide>
 				</div>
 			</section>
 		</>
