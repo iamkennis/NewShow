@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
-import { FaTimes, FaGripLines, FaCheckCircle } from 'react-icons/fa';
+import { FaTimes, FaGripLines, FaCheckCircle, FaToggleOff, FaToggleOn } from 'react-icons/fa';
 import { AiOutlineUser, AiOutlineSearch, AiOutlineShopping, AiOutlineHeart} from 'react-icons/ai';
 import Image from 'next/image';
 
@@ -234,6 +234,54 @@ export default function HomePage() {
 								We receive new sportwear every day. Just take your pick.
 							</p>
 							<button className='bg-[#02BE83] font-bold text-white w-[135px] h-[45px] rounded-[4px]'>
+								Shop Now
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section className='my-8'>
+				<div className='flex flex-col items-center md:flex-row md:justify-between md:px-20'>
+					<h4 className='text-[24px] font-bold'>Best seller this work</h4>
+					<div className='text-[16px] font-normal'>
+						<span className='flex items-center gap-4'>
+							<p>Men</p>
+							<span className='text-[34px] text-blue-400'>
+								<FaToggleOn />
+							</span>
+							<p>Women</p>
+						</span>
+					</div>
+				</div>
+				<div className='my-8 grid grid-flow-row md:grid-cols-12 md:gap-24  items-center'>
+					<div className='relative my-8 grid md:col-span-7'>
+						<div className='bg-gradient-to-r max-w-xs md:max-w-md h-[250px] sm:max-w-lg sm:h-[350px] md:h-[300px] rounded-r-[34px] from-[#FFB2B2] to-[#FF3C78]'></div>
+						<span className='absolute top-10 bottom-0 md:top-6 md:bottom-0'>
+							<Image
+								width='800px'
+								height='400px'
+								objectFit='cover'
+								src='/images/bigshoe.svg'
+								alt='logo'
+							/>
+						</span>
+					</div>
+					<div className='space-y-4 grid md:col-span-4 items-center text-center md:text-start'>
+						<div>
+							<Image
+								width='90px'
+								height='20px'
+								objectFit='contain'
+								src='/images/Rating.svg'
+								alt='logo'
+							/>
+						</div>
+						<div className='flex flex-col items-center md:items-start space-y-4'>
+							<p className='text-[18px] md:text-[20px] max-w-xs md:max-w-xs font-bold'>
+								Adidas Falcon Shoes for women - 2021 Edition
+							</p>
+							<p className='text-[14px] md:text-[18px] font-bold'>$120.50</p>
+							<button className='bg-[#315BFF] font-bold text-white w-[135px] h-[45px] rounded-[4px]'>
 								Shop Now
 							</button>
 						</div>
