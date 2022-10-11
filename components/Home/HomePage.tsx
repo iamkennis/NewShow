@@ -78,14 +78,14 @@ export default function HomePage() {
 					</div>
 				</header>
 			</div>
-			<main className='w-full h-screen px-8'>
-				<div className='my-12'>
-					<h4 className='text-[26px] font-bold text-center'>
+			<main className='w-full h-full px-8 lg:px-24'>
+				<div className='my-12 lg:py-14'>
+					<h4 className='text-[26px] md:text-[40px] font-bold text-center'>
 						Featured products
 					</h4>
 					<p></p>
 				</div>
-				<div className='py-8 flex flex-col gap-24 md:gap-12 md:flex-auto lg:flex-row'>
+				<div className='py-8 grid grid-flow-row gap-24 md:gap-12 md:grid-cols-2 lg:grid-cols-4'>
 					<div className='flex flex-col items-center'>
 						<div className='relative top-0 left-0 right-0 bottom-0 flex flex-col items-center'>
 							<div className='absolute left-24 md:left-36 lg:left-24 lg:w-[80px] lg:h-[80px] -top-6 right-0 bg-gradient-to-r rounded-full w-[120px] h-[120px]  from-[#FFDEBE] to-[#FE7831]'></div>
@@ -196,6 +196,50 @@ export default function HomePage() {
 					</div>
 				</div>
 			</main>
+			<section className='h-full mt-24 grid grid-flow-row  md:grid-cols-2'>
+				<div className='h-screen w-full md:h-full md:py-8 bg-[#02BE83]'>
+					<div className='flex flex-col md:flex-row items-center px-4'>
+						<Image
+							width='300px'
+							height='400px'
+							objectFit='cover'
+							src='/images/ftball.svg'
+							alt='logo'
+						/>
+						<div className='space-y-4 text-center md:text-start'>
+							<p className='text-[#0A083A] text-[16px]'>Accesories</p>
+							<h4 className='text-white font-bold text-[34px]'>Football</h4>
+							<p className='text-white text-[16px] w-48'>
+								We receive new sportwear every day. Just take your pick.
+							</p>
+							<button className='bg-[#0A083A] font-bold text-white w-[135px] h-[45px] rounded-[4px]'>
+								Shop Now
+							</button>
+						</div>
+					</div>
+				</div>
+				<div className='h-screen w-full md:h-full md:py-8  bg-[#0A083A]'>
+					<div className='flex flex-col md:flex-row items-center px-4'>
+						<Image
+							width='300px'
+							height='400px'
+							objectFit='contain'
+							src='/images/vlley.svg'
+							alt='logo'
+						/>
+						<div className='space-y-4 text-center md:text-start'>
+							<p className='text-[#02BE83] text-[16px]'>Accesories</p>
+							<h4 className='text-white font-bold text-[34px]'>Volleyball</h4>
+							<p className='text-white text-[16px] w-48'>
+								We receive new sportwear every day. Just take your pick.
+							</p>
+							<button className='bg-[#02BE83] font-bold text-white w-[135px] h-[45px] rounded-[4px]'>
+								Shop Now
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
 		</>
 	);
 }
