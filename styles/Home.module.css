@@ -127,3 +127,9 @@
     filter: invert(1);
   }
 }
+/* className='mt-10 flex flex-col relative md:flex-row md:mt-14 md:items-start lg:items-start' */
+
+/* <div className='relative right-10 mt-8 top-[-100px] md:top-[-220px] lg:top-[-220px] md:left-12'><img src='/images/Sha.svg'
+alt='shoe'
+className=' pl-24 sm:pl-44 md:pl-0 lg:pl-0 h-full md:h-[800px] lg:h-[800px]'
+/></div> */
