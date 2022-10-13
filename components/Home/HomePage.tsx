@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
-import { FaTimes, FaGripLines, FaCheckCircle, FaToggleOn,FaPlay } from 'react-icons/fa';
+import { FaTimes, FaGripLines, FaCheckCircle, FaToggleOn,FaPlay, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import {BsHeadphones, BsXDiamond} from 'react-icons/bs'
 import { AiOutlineUser, AiOutlineSearch, AiOutlineShopping, AiOutlineHeart, AiOutlineCar, AiOutlineWallet} from 'react-icons/ai';
 import Image from 'next/image';
@@ -9,6 +9,17 @@ import '@splidejs/react-splide/css/skyblue';
 
 
 export default function HomePage() {
+
+const logodata = [
+	{
+     img: '/images/nike.svg'
+}
+,{
+	img: '/images/newb.svg'
+}
+];
+
+
   return (
 		<>
 			<div className='bg-[#F5F5F5] h-full w-full px-4 md:px-20 lg:px-24 py-8' >
@@ -506,7 +517,7 @@ export default function HomePage() {
 					</Splide>
 				</div>
 			</section>
-			<section   className='w-full h-full  mt-24 px-4 md:px-14'>
+			<section   className='w-full h-full  mt-24 px-8 md:px-14'>
 				<div className='grid grid-flow-row md:grid-cols-2 place-items-center md:place-items-start md:gap-12'>
 					<div className='relative top-0 left-0 right-0 bottom-0'>
 						<Image
@@ -520,15 +531,15 @@ export default function HomePage() {
 					</div>
 					
 					<div>
-						<h4 className='text-[34px] md:text-[28px] font-bold pb-8'>
+						<h4 className='text-[30px] text-center md:text-[28px] font-bold pb-8'>
 							Why choose our shop
 						</h4>
-						<p className='text-[16px] md:text-[14px] text-[#6C6B6B]  max-w-sm pb-4'>
+						<p className='text-[16px] md:text-[14px] text-center md:text-start text-[#6C6B6B]  max-w-sm pb-4'>
 							For explosive events sprints up to 400 metres, long jump, triple
 							jump the reduction in atmospheric pressure means there is less
 							resistance from the atmosphere.
 						</p>
-						<div className='grid grid-flow-row gap-4 md:grid-cols-2 md:gap-4'>
+						<div className='grid grid-flow-row place-items-center md:place-items-start gap-4 md:grid-cols-2 md:gap-4'>
 							<span className='flex flex-row space-x-2'>
 								<span className='text-[24px] text-blue-500'>
 									<AiOutlineCar />
@@ -557,7 +568,7 @@ export default function HomePage() {
 					</div>
 				</div>
 			</section>
-			<section className='my-24'>
+			<section className='my-24 px-8 md:px-12'>
 				<div className='flex flex-col gap-4 mb-12 items-center'>
 				<h4 className='text-3xl font-bold'>Choose categories</h4>
 				<p className='text-gray-400 text-center text-[14px] max-w-md'>For explosive events (sprints up to 400 metres, long jump, triple jump) the reduction in atmospheric pressure means there is less resistance from the atmosphere.</p>
@@ -565,7 +576,7 @@ export default function HomePage() {
 				<div className=''>
 				<Splide
 						options={{
-							// perPage: 1,
+							// perPage: 3,
 							gap: '1rem',
 							arrows: false,
 							pagination: true,
@@ -592,7 +603,7 @@ export default function HomePage() {
 						}}
 						aria-label='My Favorite Images'>
 							<SplideSlide>
-                  <div className='bg-[#F5F5F5] w-[300px] h-[342px] rounded-[16px] p-4'>
+                  <div className='bg-[#F5F5F5]  max-w-md md:max-w-md text-center md:text-start h-[300px] rounded-[16px] p-8'>
 					  <h6 className='text-[24px] text-[#315BFF] font-bold'>Sneakers Collection</h6>
 					  <p className='text-[12px] text-gray-400 font-bold'>120 products</p>
 					  <p className='text-[14px] underline text-[#315BFF]'>See collection</p>
@@ -607,7 +618,7 @@ export default function HomePage() {
 				  </div>
 				  </SplideSlide>
 				  <SplideSlide>
-				  <div className='bg-[#F5F5F5] w-[300px] h-[342px] rounded-[16px] p-4'>
+				  <div className='bg-[#F5F5F5] max-w-md md:max-w-md text-center md:text-start h-[300px] rounded-[16px] p-8'>
 					  <h6 className='text-[24px] text-[#FE7831] font-bold'>Football Collection</h6>
 					  <p className='text-[12px] text-gray-400 font-bold'>80 products</p>
 					  <p className='text-[14px] underline text-[#FE7831]'>See collection</p>
@@ -622,7 +633,7 @@ export default function HomePage() {
 				  </div>
 				  </SplideSlide>
 				  <SplideSlide>
-				  <div className='bg-[#F5F5F5] w-[300px] h-[342px] rounded-[16px] p-4'>
+				  <div className='bg-[#F5F5F5] max-w-md md:max-w-md text-center md:text-start h-[300px] rounded-[16px] p-8'>
 					  <h6 className='text-[24px] text-[#FF3C78] font-bold'>Volleyball Collection</h6>
 					  <p className='text-[12px] text-gray-400 font-bold'>120 products</p>
 					  <p className='text-[14px] underline text-[#FF3C78]'>See collection</p>
@@ -639,7 +650,157 @@ export default function HomePage() {
 				  </Splide>
 				</div>
 			</section>
-			
+			<section className='bg-[#F5F5F5] h-[25rem] px-8 md:px-12 py-12'>
+				<h4 className='text-[26px] md:text-[34px] font-bold text-center'>Popular brands</h4>
+				<div className='my-12'>
+						<Splide
+						options={{
+							perPage: 3,
+							gap: '2rem',
+							arrows: true,
+							pagination: false,
+							// width: '70%',
+							breakpoints: {
+								640: {
+									perPage: 1,
+									gap: '1rem',
+								},
+								768: {
+									perPage: 2,
+									gap: '1rem',
+								},
+								
+								1024: {
+									perPage: 4,
+									gap: '1rem',
+								},
+								1440: {
+									perPage: 4,
+									gap: '1rem',
+								},
+							},
+						}}
+						aria-label='My Favorite Images'>
+					
+							<SplideSlide>
+                      	<div className='bg-white rounded-md h-[200px] max-w-md text-center py-4'>
+				         <Image
+							width='150px'
+							height='150px'
+							objectFit='contain'
+							src='/images/nike.svg'
+							alt='logo'
+						/>
+				</div>
+				</SplideSlide>
+				<SplideSlide>
+                      	<div className='bg-white rounded-md h-[200px] max-w-md text-center py-4'>
+				         <Image
+							width='150px'
+							height='150px'
+							objectFit='contain'
+							src='/images/newb.svg'
+							alt='logo'
+						/>
+				</div>
+				</SplideSlide>
+				<SplideSlide>
+                      	<div className='bg-white rounded-md h-[200px] max-w-md text-center py-4'>
+				         <Image
+							width='150px'
+							height='150px'
+							objectFit='contain'
+							src='/images/add.svg'
+							alt='logo'
+						/>
+				</div>
+				</SplideSlide>
+				<SplideSlide>
+                      	<div className='bg-white rounded-md h-[200px] max-w-md text-center py-4'>
+				         <Image
+							width='150px'
+							height='150px'
+							objectFit='contain'
+							src='/images/bird.svg'
+							alt='logo'
+						/>
+				</div>
+				</SplideSlide>
+					</Splide>
+				</div>
+				
+			</section>
+			<div>
+				<div className='bg-gradient-to-r w-full flex-col items-center flex md:justify-around md:flex-row md:max-w-6xl h-full md:rounded-r-[24px] py-12  mt-24 from-[#8AA8F8] to-[#315BFF]'>
+			<div className='flex flex-col items-center md:items-start gap-4'>
+			<h4 className='text-[24px] md:text-[30px] text-center md:text-start max-w-xs font-bold text-white'>Subscribe now to get the latest updates</h4>
+					<form className='flex flex-col max-w-sm md:w-full px-4 md:px-0'>
+						<input className='bg-white p-3 border-none outline-none rounded-md' type='email' placeholder='Enter you email'/>
+						<button className='bg-[#315BFF] text-white font-bold bprder-2-[#315BFF] p-3 rounded-md'>SUBSCRIBE</button>
+					</form>
+					<div className='flex flex-row gap-4'>
+					<div className='bg-white rounded-full text-[#315BFF] w-8 h-8 p-2'>
+						<FaFacebookF/>
+					</div>
+					<div className='bg-white rounded-full text-[#315BFF] w-8 h-8 p-2'>
+						<FaTwitter/>
+					</div>
+					<div className='bg-white rounded-full text-[#315BFF] w-8 h-8 p-2'>
+						<FaInstagram/>
+					</div>
+					</div>
+			</div>
+			     <div className='relative'>
+				 <div className='absolute left-44 md:left-36 lg:left-36 lg:w-[230px] lg:h-[230px] top-48 lg:top-24 right-0 bg-gradient-to-r rounded-full w-[120px] h-[120px]  from-[#FFB2B2] to-[#FF3C78]'>.</div>
+				 <Image
+							width='400px'
+							height='300px'
+							objectFit='cover'
+							src='/images/shoe10.svg'
+							alt='logo'
+						/>
+				 </div>
+				</div>
+				</div>
+				<footer className='w-full h-full  px-4 md:px-24 my-16 md:my-24 gap-8 grid place-items-center md:items-start grid-flow-row md:grid-flow-col'>
+					<div className='flex flex-col gap-4 items-center md:items-start'>
+					<Image width='50%' height='40%' src='/images/logo.svg' alt='logo' />
+					<p className='text-[12px] w-44 text-center md:text-start'>Our shop is the best choice for buying footwear.</p>
+					<div className='flex items-center gap-4 text-[#FF3C78] text-sm'>
+						<FaFacebookF/>
+						<FaTwitter/>
+						<FaInstagram/>
+					</div>
+					</div>
+					<div>
+						<p className='text-[16px] font-bold'>Home</p>
+						<ul className='hidden md:block text-[12px] text-gray-500'>
+							<li>Support Center</li>
+							<li>Customer Support</li>
+							<li>Copyright</li>
+							<li>Popular Campaign</li>
+						</ul>
+					</div>
+					<div>
+						<p className='text-[16px] font-bold'>Our Information</p>
+						<ul className='hidden md:block text-[12px] text-gray-500'>
+							<li>Return Policy</li>
+							<li>Privacy Policy</li>
+							<li>Terms and Conditions</li>
+							<li>Site Map</li>
+							<li>Store Hours</li>
+						</ul>
+					</div>
+					<div>
+						<p className='text-[16px] font-bold'>My Account</p>
+						<ul className='hidden md:block text-[12px] text-gray-500'>
+							<li>Press Inquiries</li>
+							<li>Social Media Directories</li>
+							<li>Permission</li>
+							<li>Requests</li>
+						</ul>
+					</div>
+				</footer>
 		</>
 	);
 }
