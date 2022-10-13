@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import React from 'react'
-import { FaTimes, FaGripLines, FaCheckCircle, FaToggleOff, FaToggleOn } from 'react-icons/fa';
-import { AiOutlineUser, AiOutlineSearch, AiOutlineShopping, AiOutlineHeart} from 'react-icons/ai';
+import { FaTimes, FaGripLines, FaCheckCircle, FaToggleOn,FaPlay } from 'react-icons/fa';
+import {BsHeadphones, BsXDiamond} from 'react-icons/bs'
+import { AiOutlineUser, AiOutlineSearch, AiOutlineShopping, AiOutlineHeart, AiOutlineCar, AiOutlineWallet} from 'react-icons/ai';
 import Image from 'next/image';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/skyblue';
@@ -10,8 +11,8 @@ import '@splidejs/react-splide/css/skyblue';
 export default function HomePage() {
   return (
 		<>
-			<div className='bg-[#F5F5F5] h-full w-full px-4 md:px-20 lg:px-24 py-8'>
-				<nav className='flex flex-row justify-between items-center'>
+			<div className='bg-[#F5F5F5] h-full w-full px-4 md:px-20 lg:px-24 py-8' >
+				<nav  className='flex flex-row justify-between items-center'>
 					<div>
 						<Image width='50%' height='40%' src='/images/logo.svg' alt='logo' />
 					</div>
@@ -36,7 +37,7 @@ export default function HomePage() {
 						</span>
 					</div>
 				</nav>
-				<header className='my-8 grid grid-flow-row md:items-center md:grid-flow-col'>
+				<header   className='my-8 grid grid-flow-row md:items-center md:grid-flow-col'>
 					<div className='flex flex-col items-center md:items-start gap-8'>
 						<div className='mt-8 md:mt-0'>
 							<h4 className='text-[32px] md:text-[25px] md:max-w-md lg:text-[44px] font-bold md:text-start text-center py-4'>
@@ -81,7 +82,7 @@ export default function HomePage() {
 					</div>
 				</header>
 			</div>
-			<main className='w-full h-full px-8 lg:px-24'>
+			<main   className='w-full h-full px-8 lg:px-24'>
 				<div className='my-12 lg:py-14'>
 					<h4 className='text-[26px] md:text-[40px] font-bold text-center'>
 						Featured products
@@ -199,7 +200,7 @@ export default function HomePage() {
 					</div>
 				</div>
 			</main>
-			<section className='h-full mt-24 grid grid-flow-row  md:grid-cols-2'>
+			<section   className='h-full mt-24 grid grid-flow-row  md:grid-cols-2'>
 				<div className='h-screen w-full md:h-full md:py-8 bg-[#02BE83]'>
 					<div className='flex flex-col md:flex-row items-center px-4'>
 						<Image
@@ -243,9 +244,9 @@ export default function HomePage() {
 					</div>
 				</div>
 			</section>
-			<section className='my-8'>
+			<section   className='my-8 md:my-20'>
 				<div className='flex flex-col items-center md:flex-row md:justify-between md:px-20'>
-					<h4 className='text-[24px] font-bold'>Best seller this work</h4>
+					<h4 className='text-[24px] md:text-[34px] font-bold'>Best seller this work</h4>
 					<div className='text-[16px] font-normal'>
 						<span className='flex text-[16px] font-bold items-center gap-4'>
 							<p>Men</p>
@@ -256,7 +257,7 @@ export default function HomePage() {
 						</span>
 					</div>
 				</div>
-				<div className='my-8 grid grid-flow-row md:grid-cols-12 md:gap-20  items-center'>
+				<div className='my-8 md:my-20 grid grid-flow-row md:grid-cols-12 md:gap-20  items-center'>
 					<div className='relative my-8 grid md:col-span-7'>
 						<div className='bg-gradient-to-r max-w-xs md:max-w-md h-[250px] sm:max-w-lg sm:h-[350px] md:h-[300px] rounded-r-[34px] from-[#FFB2B2] to-[#FF3C78]'></div>
 						<span className='absolute top-10 bottom-0 md:top-6 md:bottom-0'>
@@ -291,8 +292,8 @@ export default function HomePage() {
 					</div>
 				</div>
 			</section>
-			<section className='bg-[#F5F5F5] h-64 w-full px-4 md:px-22 py-4'>
-				<div className='flex flex-col items-center md:flex-row md:justify-between gap-4'>
+			<section   className='h-full w-full pt-8'>
+				<div className='bg-[#F5F5F5] py-8 md:pb-24 px-4 md:px-22 lg:px-24 w-full h-64 md:h-80 flex flex-col items-center md:flex-row md:justify-between gap-4'>
 					<span>
 						<h4 className='text-[28px] text-center md:text-start font-bold'>
 							New arrivals
@@ -304,7 +305,7 @@ export default function HomePage() {
 					</span>
 					<p className="text-[#FF3C78] after:content-['>']">View all</p>
 				</div>
-				<div className='mt-24 px-4'>
+				<div className='-mt-20 px-4 md:px-8'>
 					<Splide
 						options={{
 							// perPage: 1,
@@ -320,19 +321,21 @@ export default function HomePage() {
 									perPage: 2,
 									gap: '1rem',
 								},
+								
 								1024: {
 									perPage: 3,
 									gap: '1rem',
 								},
 								1440: {
 									perPage: 4,
+									gap: '2rem',
 								},
 							},
 						}}
 						aria-label='My Favorite Images'>
 						<SplideSlide>
 							<div className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r w-[200px] h-[300px] rounded-3xl from-[#FFDEBE] to-[#FE7831]'>
+								<div className='bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[#FFDEBE] to-[#FE7831]'>
 									<p className='text-white text-[24px] font-bold p-4'>1</p>
 									<span>
 										<Image
@@ -366,7 +369,7 @@ export default function HomePage() {
 						</SplideSlide>
 						<SplideSlide>
 							<div className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r w-[200px] h-[300px] rounded-3xl from-[#8AA8F8] to-[#315BFF]'>
+								<div className='bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[#8AA8F8] to-[#315BFF]'>
 									<p className='text-white text-[24px] font-bold p-4'>2</p>
 									<span>
 										<Image
@@ -393,14 +396,14 @@ export default function HomePage() {
 										Adidas Falcon Shoes for men - 2021 Edition
 									</p>
 									<h4 className='font-bold text-[18px] md:text-[22px]'>
-										$120.50
+										$140.50
 									</h4>
 								</div>
 							</div>
 						</SplideSlide>
 						<SplideSlide>
 							<div className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r w-[200px] h-[300px] rounded-3xl from-[#B3F6DC] to-[#02BE83]'>
+								<div className='bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[#B3F6DC] to-[#02BE83]'>
 									<p className='text-white text-[24px] font-bold p-4'>3</p>
 									<span>
 										<Image
@@ -434,7 +437,7 @@ export default function HomePage() {
 						</SplideSlide>
 						<SplideSlide>
 							<div className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r w-[200px] h-[300px] rounded-3xl from-[#FFB2B2] to-[#FF3C78]'>
+								<div className='bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[#FFB2B2] to-[#FF3C78]'>
 									<p className='text-white text-[24px] font-bold p-4'>4</p>
 									<span>
 										<Image
@@ -468,7 +471,7 @@ export default function HomePage() {
 						</SplideSlide>
 						<SplideSlide>
 							<div className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r w-[200px] h-[300px] rounded-3xl from-[#8AA8F8] to-[#315BFF]'>
+								<div className='bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[#8AA8F8] to-[#315BFF]'>
 									<p className='text-white text-[24px] font-bold p-4'>5</p>
 									<span>
 										<Image
@@ -503,6 +506,140 @@ export default function HomePage() {
 					</Splide>
 				</div>
 			</section>
+			<section   className='w-full h-full  mt-24 px-4 md:px-14'>
+				<div className='grid grid-flow-row md:grid-cols-2 place-items-center md:place-items-start md:gap-12'>
+					<div className='relative top-0 left-0 right-0 bottom-0'>
+						<Image
+							width='500px'
+							height='400px'
+							objectFit='cover'
+							src='/images/shoe9.svg'
+							alt='logo'
+						/>
+						
+					</div>
+					
+					<div>
+						<h4 className='text-[34px] md:text-[28px] font-bold pb-8'>
+							Why choose our shop
+						</h4>
+						<p className='text-[16px] md:text-[14px] text-[#6C6B6B]  max-w-sm pb-4'>
+							For explosive events sprints up to 400 metres, long jump, triple
+							jump the reduction in atmospheric pressure means there is less
+							resistance from the atmosphere.
+						</p>
+						<div className='grid grid-flow-row gap-4 md:grid-cols-2 md:gap-4'>
+							<span className='flex flex-row space-x-2'>
+								<span className='text-[24px] text-blue-500'>
+									<AiOutlineCar />
+								</span>
+								<p>Fast Delivery</p>
+							</span>
+							<span className='flex flex-row space-x-2'>
+								<span className='text-[24px] text-blue-500'>
+									<BsHeadphones />
+								</span>
+								<p>Great Support</p>
+							</span>
+							<span className='flex flex-row space-x-2'>
+								<span className='text-[24px] text-blue-500'>
+									<AiOutlineWallet />
+								</span>
+								<p>Cool Prices</p>
+							</span>
+							<span className='flex flex-row space-x-2'>
+								<span className='text-[24px] text-blue-500'>
+									<BsXDiamond />
+								</span>
+								<p>High Quality</p>
+							</span>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section className='my-24'>
+				<div className='flex flex-col gap-4 mb-12 items-center'>
+				<h4 className='text-3xl font-bold'>Choose categories</h4>
+				<p className='text-gray-400 text-center text-[14px] max-w-md'>For explosive events (sprints up to 400 metres, long jump, triple jump) the reduction in atmospheric pressure means there is less resistance from the atmosphere.</p>
+				</div>
+				<div className=''>
+				<Splide
+						options={{
+							// perPage: 1,
+							gap: '1rem',
+							arrows: false,
+							pagination: true,
+							// margin: '100%',
+							breakpoints: {
+								640: {
+									perPage: 1,
+									gap: '1rem',
+								},
+								768: {
+									perPage: 2,
+									gap: '1rem',
+								},
+								
+								1024: {
+									perPage: 3,
+									gap: '1rem',
+								},
+								1440: {
+									perPage: 3,
+									gap: '2rem',
+								},
+							},
+						}}
+						aria-label='My Favorite Images'>
+							<SplideSlide>
+                  <div className='bg-[#F5F5F5] w-[300px] h-[342px] rounded-[16px] p-4'>
+					  <h6 className='text-[24px] text-[#315BFF] font-bold'>Sneakers Collection</h6>
+					  <p className='text-[12px] text-gray-400 font-bold'>120 products</p>
+					  <p className='text-[14px] underline text-[#315BFF]'>See collection</p>
+					  <Image
+											width='800px'
+											height='750px'
+											objectFit='cover'
+											src='/images/shoe6.svg'
+											alt='logo'
+										/>
+
+				  </div>
+				  </SplideSlide>
+				  <SplideSlide>
+				  <div className='bg-[#F5F5F5] w-[300px] h-[342px] rounded-[16px] p-4'>
+					  <h6 className='text-[24px] text-[#FE7831] font-bold'>Football Collection</h6>
+					  <p className='text-[12px] text-gray-400 font-bold'>80 products</p>
+					  <p className='text-[14px] underline text-[#FE7831]'>See collection</p>
+					  <Image
+							width='200px'
+							height='250px'
+							objectFit='cover'
+							src='/images/ftball.svg'
+							alt='logo'
+						/>
+
+				  </div>
+				  </SplideSlide>
+				  <SplideSlide>
+				  <div className='bg-[#F5F5F5] w-[300px] h-[342px] rounded-[16px] p-4'>
+					  <h6 className='text-[24px] text-[#FF3C78] font-bold'>Volleyball Collection</h6>
+					  <p className='text-[12px] text-gray-400 font-bold'>120 products</p>
+					  <p className='text-[14px] underline text-[#FF3C78]'>See collection</p>
+					  <Image
+							width='200px'
+							height='200px'
+							objectFit='cover'
+							src='/images/vlley.svg'
+							alt='logo'
+						/>
+
+				  </div>
+				  </SplideSlide>
+				  </Splide>
+				</div>
+			</section>
+			
 		</>
 	);
 }
