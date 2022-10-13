@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react'
+import React,{useState} from 'react'
 import { FaTimes, FaGripLines, FaCheckCircle, FaToggleOn,FaPlay, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import {BsHeadphones, BsXDiamond} from 'react-icons/bs'
 import { AiOutlineUser, AiOutlineSearch, AiOutlineShopping, AiOutlineHeart, AiOutlineCar, AiOutlineWallet} from 'react-icons/ai';
@@ -8,7 +8,18 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/skyblue';
 
 
+export const useToggle = (initialState = false) =>  {
+	const [state, setState] = useState(initialState);
+
+	const toggle = () => {
+        setState((prev) => !prev)
+	}
+	return [state, toggle]
+}
+
+
 export default function HomePage() {
+	const [isVisible, toggle]:any = useToggle();
 
 const logodata = [
 	{
@@ -44,9 +55,14 @@ const logodata = [
 							<AiOutlineShopping />
 						</span>
 						<span className='lg:hidden'>
-							<FaGripLines />
+						<button
+					
+						onClick={toggle}>
+						{isVisible ? <FaTimes /> : <FaGripLines />}
+					</button>
 						</span>
 					</div>
+					
 				</nav>
 				<header   className='my-8 grid grid-flow-row md:items-center md:grid-flow-col'>
 					<div className='flex flex-col items-center md:items-start gap-8'>
@@ -801,6 +817,15 @@ const logodata = [
 						</ul>
 					</div>
 				</footer>
+				{isVisible && (
+				<div className='w-full md:w-[300px] h-[400px] lg:hidden rounded-md bg-[#0A083A] absolute md:right-20 bottom-0 top-24 md:top-16'>
+					<div className='flex flex-col items-center py-12 space-y-8  px-4 font-bold text-white'>
+					<Link href=''>Footwear</Link>
+						<Link href=''>About us</Link>
+						<Link href=''>Products</Link>
+						<Link href=''>Sale</Link>
+					</div>
+				</div>)}
 		</>
 	);
 }
