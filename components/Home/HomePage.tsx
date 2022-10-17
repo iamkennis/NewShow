@@ -21,14 +21,95 @@ export const useToggle = (initialState = false) =>  {
 export default function HomePage() {
 	const [isVisible, toggle]:any = useToggle();
 
-const logodata = [
+const featuresdata = [
 	{
-     img: '/images/nike.svg'
+     img: '/images/shoe1.svg',
+	 color1: '#FFDEBE',
+	 color2: '#FE7831'
 }
 ,{
-	img: '/images/newb.svg'
+	img: '/images/shoe2.svg',
+	color1: '#50ad89',
+	color2: ' #02BE83'
+
+}
+,{
+	img: '/images/shoe3.svg',
+	color1: '#FFB2B2',
+	color2: '#FF3C78'
+	
+}
+,{
+	img: '/images/shoe4.svg',
+	color1: '#8AA8F8',
+	color2: '#315BFF'
+}
+
+];
+
+const newarrdata = [
+	{
+     img: '/images/shoe6.svg',
+	 color1: '#FFDEBE',
+	 color2: '#FE7831',
+	 no: '1'
+},
+,{
+	img: '/images/shoe6.svg',
+	color1: '#8AA8F8',
+	color2: '#315BFF',
+	no: '2',
+}
+,{
+	img: '/images/shoe7.svg',
+	color1: '#50ad89',
+	color2: '#02BE83',
+	no: '3'
+}
+,{
+	img: '/images/shoe8.svg',
+	color1: '#FFB2B2',
+	color2: '#FF3C78',
+	no: '4'
+	
+},{
+	img: '/images/shoe6.svg',
+	color1: '#8AA8F8',
+	color2: '#315BFF',
+	no: '5'
+},
+,{
+	img: '/images/shoe8.svg',
+	color1: '#FFB2B2',
+	color2: '#FF3C78',
+	no: '6'
+
 }
 ];
+
+const collectiondata = [
+	{
+	  img: '/images/shoe6.svg',
+	  title : 'Sneakers Collection',
+	  subtitle: '140 products',
+	  color: '#315BFF'
+	 
+	},
+	{
+		img: '/images/ftball.svg',
+		title : 'Football Collection',
+		subtitle: '80 products',
+		color: '#FE7831'
+		
+	  },
+	  {
+		img: '/images/vlley.svg',
+		title : 'Volleyball Collection',
+		subtitle: '120 products',
+		color: '#FF3C78'
+	  },
+]
+
 
 
   return (
@@ -117,15 +198,16 @@ const logodata = [
 					<p></p>
 				</div>
 				<div className='py-8 grid grid-flow-row gap-24 md:gap-12 md:grid-cols-2 lg:grid-cols-4'>
-					<div className='flex flex-col items-center'>
+					{featuresdata.map((data,index) => 
+					<div className='flex flex-col items-center' key={index}>
 						<div className='relative top-0 left-0 right-0 bottom-0 flex flex-col items-center'>
-							<div className='absolute left-24 md:left-36 lg:left-24 lg:w-[80px] lg:h-[80px] -top-6 right-0 bg-gradient-to-r rounded-full w-[120px] h-[120px]  from-[#FFDEBE] to-[#FE7831]'></div>
+							<div className={`absolute left-24 md:left-36 lg:left-24 lg:w-[80px] lg:h-[80px] -top-6 right-0 bg-gradient-to-r rounded-full w-[120px] h-[120px]  from-[${data.color1}] to-[${data.color2}]`}></div>
 							<div className=''>
 								<Image
 									width='400px'
 									height='200px'
 									objectFit='cover'
-									src='/images/shoe1.svg'
+									src={data.img}
 									alt='logo'
 								/>
 							</div>
@@ -144,87 +226,7 @@ const logodata = [
 							<h4 className='font-bold text-[18px]'>$120.50</h4>
 						</div>
 					</div>
-					<div className='flex flex-col items-center'>
-						<div className='relative flex flex-col items-center'>
-							<div className='absolute left-24 md:left-36 lg:left-24 lg:w-[80px] lg:h-[80px]  -top-6 right-0 bg-gradient-to-r rounded-full w-[120px] h-[120px]  from-[#50ad89] to-[ #02BE83]'></div>
-							<div className=''>
-								<Image
-									width='400px'
-									height='200px'
-									objectFit='cover'
-									src='/images/shoe2.svg'
-									alt='logo'
-								/>
-							</div>
-						</div>
-						<div className='text-center md:text-start space-y-4'>
-							<Image
-								width='90px'
-								height='20px'
-								objectFit='contain'
-								src='/images/Rating.svg'
-								alt='logo'
-							/>
-							<p className='text-[16px] max-w-md'>
-								Adidas Falcon Shoes for men - 2021 Edition
-							</p>
-							<h4 className='font-bold text-[18px]'>$120.50</h4>
-						</div>
-					</div>
-					<div className='flex flex-col items-center'>
-						<div className='relative flex flex-col items-center'>
-							<div className='absolute left-24 md:left-36 lg:left-24 lg:w-[80px] lg:h-[80px]  -top-6 right-0 bg-gradient-to-r rounded-full w-[120px] h-[120px]  from-[#FFB2B2] to-[#FF3C78]'></div>
-							<div className=''>
-								<Image
-									width='400px'
-									height='200px'
-									objectFit='cover'
-									src='/images/shoe3.svg'
-									alt='logo'
-								/>
-							</div>
-						</div>
-						<div className='text-center md:text-start space-y-4'>
-							<Image
-								width='90px'
-								height='20px'
-								objectFit='contain'
-								src='/images/Rating.svg'
-								alt='logo'
-							/>
-							<p className='text-[16px] max-w-md'>
-								Adidas Falcon Shoes for men - 2021 Edition
-							</p>
-							<h4 className='font-bold text-[18px]'>$120.50</h4>
-						</div>
-					</div>
-					<div className='flex flex-col items-center'>
-						<div className='relative flex flex-col items-center'>
-							<div className='absolute left-24 md:left-36 lg:left-24 lg:w-[80px] lg:h-[80px]  -top-6 right-0 bg-gradient-to-r rounded-full w-[120px] h-[120px]  from-[#315BFF] to-[#8AA8F8]'></div>
-							<div className=''>
-								<Image
-									width='400px'
-									height='200px'
-									objectFit='cover'
-									src='/images/shoe4.svg'
-									alt='logo'
-								/>
-							</div>
-						</div>
-						<div className='text-center md:text-start space-y-4'>
-							<Image
-								width='90px'
-								height='20px'
-								objectFit='contain'
-								src='/images/Rating.svg'
-								alt='logo'
-							/>
-							<p className='text-[16px] max-w-md'>
-								Adidas Falcon Shoes for men - 2021 Edition
-							</p>
-							<h4 className='font-bold text-[18px]'>$120.50</h4>
-						</div>
-					</div>
+)}
 				</div>
 			</main>
 			<section   className='h-full mt-24 grid grid-flow-row  md:grid-cols-2'>
@@ -360,16 +362,17 @@ const logodata = [
 							},
 						}}
 						aria-label='My Favorite Images'>
-						<SplideSlide>
+							{newarrdata.map((data,index) =>
+						<SplideSlide key={index}>
 							<div className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[#FFDEBE] to-[#FE7831]'>
-									<p className='text-white text-[24px] font-bold p-4'>1</p>
+								<div className={`bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[${data?.color1}] to-[${data?.color2}]`}>
+									<p className='text-white text-[24px] font-bold p-4'>{data?.no}</p>
 									<span>
 										<Image
 											width='800px'
 											height='750px'
 											objectFit='cover'
-											src='/images/shoe6.svg'
+											src={data?.img || ''}
 											alt='logo'
 										/>
 									</span>
@@ -394,142 +397,7 @@ const logodata = [
 								</div>
 							</div>
 						</SplideSlide>
-						<SplideSlide>
-							<div className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[#8AA8F8] to-[#315BFF]'>
-									<p className='text-white text-[24px] font-bold p-4'>2</p>
-									<span>
-										<Image
-											width='800px'
-											height='750px'
-											objectFit='cover'
-											src='/images/shoe6.svg'
-											alt='logo'
-										/>
-									</span>
-									<span className='bg-white px-5 text-[16px] rounded-xl float-right mr-4'>
-										+
-									</span>
-								</div>
-								<div className='text-center md:text-start py-10'>
-									<Image
-										width='90px'
-										height='20px'
-										objectFit='contain'
-										src='/images/Rating.svg'
-										alt='logo'
-									/>
-									<p className='text-[16px] w-52'>
-										Adidas Falcon Shoes for men - 2021 Edition
-									</p>
-									<h4 className='font-bold text-[18px] md:text-[22px]'>
-										$140.50
-									</h4>
-								</div>
-							</div>
-						</SplideSlide>
-						<SplideSlide>
-							<div className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[#B3F6DC] to-[#02BE83]'>
-									<p className='text-white text-[24px] font-bold p-4'>3</p>
-									<span>
-										<Image
-											width='800px'
-											height='750px'
-											objectFit='cover'
-											src='/images/shoe7.svg'
-											alt='logo'
-										/>
-									</span>
-									<span className='bg-white px-5 text-[16px] rounded-xl float-right mr-4'>
-										+
-									</span>
-								</div>
-								<div className='text-center md:text-start py-10'>
-									<Image
-										width='90px'
-										height='20px'
-										objectFit='contain'
-										src='/images/Rating.svg'
-										alt='logo'
-									/>
-									<p className='text-[16px] w-52'>
-										Adidas Falcon Shoes for men - 2021 Edition
-									</p>
-									<h4 className='font-bold text-[18px] md:text-[22px]'>
-										$120.50
-									</h4>
-								</div>
-							</div>
-						</SplideSlide>
-						<SplideSlide>
-							<div className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[#FFB2B2] to-[#FF3C78]'>
-									<p className='text-white text-[24px] font-bold p-4'>4</p>
-									<span>
-										<Image
-											width='800px'
-											height='750px'
-											objectFit='cover'
-											src='/images/shoe8.svg'
-											alt='logo'
-										/>
-									</span>
-									<span className='bg-white px-5 text-[16px] rounded-xl float-right mr-4'>
-										+
-									</span>
-								</div>
-								<div className='text-center md:text-start py-10'>
-									<Image
-										width='90px'
-										height='20px'
-										objectFit='contain'
-										src='/images/Rating.svg'
-										alt='logo'
-									/>
-									<p className='text-[16px] w-52'>
-										Adidas Falcon Shoes for men - 2021 Edition
-									</p>
-									<h4 className='font-bold text-[18px] md:text-[22px]'>
-										$120.50
-									</h4>
-								</div>
-							</div>
-						</SplideSlide>
-						<SplideSlide>
-							<div className='flex flex-col items-center'>
-								<div className='bg-gradient-to-r w-[240px] h-[350px] rounded-3xl from-[#8AA8F8] to-[#315BFF]'>
-									<p className='text-white text-[24px] font-bold p-4'>5</p>
-									<span>
-										<Image
-											width='800px'
-											height='750px'
-											objectFit='cover'
-											src='/images/shoe6.svg'
-											alt='logo'
-										/>
-									</span>
-									<span className='bg-white px-5 text-[16px] rounded-xl float-right mr-4'>
-										+
-									</span>
-								</div>
-								<div className='text-center md:text-start py-10'>
-									<Image
-										width='90px'
-										height='20px'
-										objectFit='contain'
-										src='/images/Rating.svg'
-										alt='logo'
-									/>
-									<p className='text-[16px] w-52'>
-										Adidas Falcon Shoes for men - 2021 Edition
-									</p>
-									<h4 className='font-bold text-[18px] md:text-[22px]'>
-										$120.50
-									</h4>
-								</div>
-							</div>
-						</SplideSlide>
+						)}
 					</Splide>
 				</div>
 			</section>
@@ -618,51 +486,24 @@ const logodata = [
 							},
 						}}
 						aria-label='My Favorite Images'>
-							<SplideSlide>
-                  <div className='bg-[#F5F5F5]  max-w-md md:max-w-md text-center md:text-start h-[300px] rounded-[16px] p-8'>
-					  <h6 className='text-[24px] text-[#315BFF] font-bold'>Sneakers Collection</h6>
-					  <p className='text-[12px] text-gray-400 font-bold'>120 products</p>
-					  <p className='text-[14px] underline text-[#315BFF]'>See collection</p>
+							{collectiondata.map((data,index) => 
+							<SplideSlide key={index}>
+                  <div className='bg-[#F5F5F5]  max-w-md md:max-w-md text-center md:text-start h-[350px] rounded-[16px] p-8'>
+					  <h6 className={`text-[24px] text-[${data.color}] font-bold`}>{data.title}</h6>
+					  <p className='text-[12px] text-gray-400 font-bold'>{data.subtitle}</p>
+					  <p className={`text-[14px] underline text-[${data.color}]`}>See collection</p>
 					  <Image
 											width='800px'
 											height='750px'
 											objectFit='cover'
-											src='/images/shoe6.svg'
+											src={data.img}
 											alt='logo'
 										/>
 
 				  </div>
 				  </SplideSlide>
-				  <SplideSlide>
-				  <div className='bg-[#F5F5F5] max-w-md md:max-w-md text-center md:text-start h-[300px] rounded-[16px] p-8'>
-					  <h6 className='text-[24px] text-[#FE7831] font-bold'>Football Collection</h6>
-					  <p className='text-[12px] text-gray-400 font-bold'>80 products</p>
-					  <p className='text-[14px] underline text-[#FE7831]'>See collection</p>
-					  <Image
-							width='200px'
-							height='250px'
-							objectFit='cover'
-							src='/images/ftball.svg'
-							alt='logo'
-						/>
+				  )}
 
-				  </div>
-				  </SplideSlide>
-				  <SplideSlide>
-				  <div className='bg-[#F5F5F5] max-w-md md:max-w-md text-center md:text-start h-[300px] rounded-[16px] p-8'>
-					  <h6 className='text-[24px] text-[#FF3C78] font-bold'>Volleyball Collection</h6>
-					  <p className='text-[12px] text-gray-400 font-bold'>120 products</p>
-					  <p className='text-[14px] underline text-[#FF3C78]'>See collection</p>
-					  <Image
-							width='200px'
-							height='200px'
-							objectFit='cover'
-							src='/images/vlley.svg'
-							alt='logo'
-						/>
-
-				  </div>
-				  </SplideSlide>
 				  </Splide>
 				</div>
 			</section>
